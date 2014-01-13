@@ -1,28 +1,31 @@
-== README
+Batman Todo App
+===============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a practicing and experimenting app for building a Batman.js App on Rails 4.
 
-Things you may want to cover:
+Based on tutorials:
 
-* Ruby version
+* [Ruby on Rails 4 and Batman.js - Another Getting Started Tutorial][1] by Neil Rosenstech
+* [Batman.js Documentation][2]
 
-* System dependencies
+How to Run
+----------
 
-* Configuration
+1. Clone this repository
+2. run `bundle` under the directory
+3. run `rake dev:build` for some basic DB init
+4. Use pow or `rails s` to visit
 
-* Database creation
+DISCLAIMER
+----------
 
-* Database initialization
+Please use at your own risk. (Of course it won't break any of your system or environment, though.)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+LICENSE
+-------
+Take what as you want, really.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[1]: http://requiremind.com/ruby-on-rails-4-and-batman-dot-js-another-getting-started-tutorial/
+[2]: http://batmanjs.org/docs/index.html
+
