@@ -22,3 +22,6 @@ class BatmanTodo.TodoListsController extends BatmanTodo.ApplicationController
 
   destroy: (params) ->
 
+  toggleTodo: (node, event, view) ->
+    view.todo.save()
+

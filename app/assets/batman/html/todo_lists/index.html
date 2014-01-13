@@ -11,7 +11,7 @@
 
     <ul class="unstyled todos">
       <li class="todo" data-foreach-todo="todolist.todos">
-        <input type="checkbox" data-bind="todo.completed">
+        <input type="checkbox" data-bind="todo.completed" data-event-change="toggleTodo">
         <span data-bind="todo.title"></span>
       </li>
       <li class="new-todo">
