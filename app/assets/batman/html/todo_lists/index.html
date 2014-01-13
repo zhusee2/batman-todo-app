@@ -1,6 +1,10 @@
 <h1>Batman Todo List (beta)</h1>
 <p>Currently we have: <span data-bind="'todo list' | pluralize todolists.length"></span></p>
 
+<p>
+  <a data-route="routes.todoLists.new">Add a Todo-List</a>
+</p>
+
 <ul class="todo-lists">
   <li class="todo-list" data-foreach-todolist="todolists">
     <h3 data-bind="todolist.title"></h3>
@@ -9,6 +13,9 @@
       <li class="todo" data-foreach-todo="todolist.todos">
         <input type="checkbox" data-bind="todo.completed">
         <span data-bind="todo.title"></span>
+      </li>
+      <li class="new-todo">
+        <a data-route="routes.todoLists[todolist].todos.new">Add a Todo</a>
       </li>
     </ul>
   </li>
