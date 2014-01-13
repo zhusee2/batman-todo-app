@@ -11,11 +11,11 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    respond_with TodoList.create(params[:todo_list])
+    respond_with TodoList.create(todo_list_params)
   end
 
   def update
-    @todo_list.update_attributes(params[:todo_list])
+    @todo_list.update_attributes(todo_list_params)
     respond_with @todo_list
   end
 
@@ -27,5 +27,9 @@ class TodoListsController < ApplicationController
 
   def find_todo_list
     @todo_list = TodoList.find(params[:id])
+  end
+
+  def todo_list_params
+    params.require(:todo_list).permit(:title, :completed)
   end
 end

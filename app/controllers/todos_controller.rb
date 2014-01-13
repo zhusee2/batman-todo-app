@@ -5,7 +5,7 @@ class TodosController < ApplicationController
   before_action :find_todo,      :only => [:destroy]
 
   def create
-    new_todo = @todo_list.todos.build(params[:todo])
+    new_todo = @todo_list.todos.build(todo_params)
     new_todo.save
     respond_with(@todo_list, new_todo)
   end
@@ -22,5 +22,9 @@ class TodosController < ApplicationController
 
   def find_todo
     @todo = Todo.find(params[:id])
+  end
+
+  def todo_params
+    params.require(:todo).permit(:title, :completed)
   end
 end
