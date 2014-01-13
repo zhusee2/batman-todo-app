@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20140113044710) do
 
   create_table "todo_lists", force: true do |t|
     t.string   "title"
-    t.boolean  "completed"
+    t.boolean  "completed",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "todos", force: true do |t|
     t.string   "title"
-    t.boolean  "completed"
+    t.boolean  "completed",    default: false
     t.integer  "todo_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
