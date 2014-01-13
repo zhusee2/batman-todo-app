@@ -28,6 +28,6 @@ ActiveRecord::Schema.define(version: 20140113044710) do
     t.datetime "updated_at"
   end
 
-  add_index "todos", ["todo_list_id"], name: "index_todos_on_todo_list_id"
+  add_index "todos", ["todo_list_id"], name: "index_todos_on_todo_list_id", using: :btree
 
 end
