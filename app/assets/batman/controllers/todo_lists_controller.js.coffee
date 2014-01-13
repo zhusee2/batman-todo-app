@@ -12,6 +12,11 @@ class BatmanTodo.TodoListsController extends BatmanTodo.ApplicationController
     @set 'todolist', new BatmanTodo.TodoList()
 
   create: (params) ->
+    @todolist.save (error, todolist) =>
+      if error
+        throw error unless error instanceof Batman.ErrorsSet
+      else
+        @redirect todolist
 
   update: (params) ->
 
