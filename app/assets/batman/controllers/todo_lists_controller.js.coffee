@@ -9,6 +9,7 @@ class BatmanTodo.TodoListsController extends BatmanTodo.ApplicationController
   edit: (params) ->
 
   new: (params) ->
+    @set 'todolist', new BatmanTodo.TodoList()
 
   create: (params) ->
 

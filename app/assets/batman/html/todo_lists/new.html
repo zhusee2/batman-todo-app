@@ -1,2 +1,12 @@
 <h1>TodoListsController#new</h1>
-<p>Find me in html/todo_lists/new.html</p>
+
+<form data-formfor-todolist="todolist" data-event-submit="create" autocomplete="off">
+  <label>
+    Title:
+    <input type="text" data-bind="todolist.title">
+  </label>
+
+  <input type="submit" value="Add">
+</form>
+
+<a data-route="routes.todoLists">Cancel</a>
