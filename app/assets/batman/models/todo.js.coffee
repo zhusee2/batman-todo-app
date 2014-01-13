@@ -5,6 +5,8 @@ class BatmanTodo.Todo extends Batman.Model
   @persist Batman.RailsStorage
 
   @belongsTo 'todo_list'
+  # Must add this to specify nested url
+  @urlNestsUnder 'todo_list'
 
   # Use @encode to tell batman.js which properties Rails will send back with its JSON.
   @encode 'title', 'completed'
