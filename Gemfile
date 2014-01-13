@@ -29,6 +29,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'batman-rails'
+gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
+gem "font-awesome-rails", "~> 4.0.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
