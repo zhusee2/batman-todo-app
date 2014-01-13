@@ -14,6 +14,10 @@ BatmanTodo::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resources :todo_lists do
+    resources :todos
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
@@ -39,7 +43,7 @@ BatmanTodo::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
