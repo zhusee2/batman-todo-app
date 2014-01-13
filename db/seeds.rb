@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+2.times do |i|
+  todo_list = TodoList.create(:title => "Todo List ##{i}")
+  5.times { |j| todo_list.todos.create(:title => "Task ##{j}") }
+end
