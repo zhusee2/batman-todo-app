@@ -17,7 +17,8 @@ Batman.config.pathToHTML = '/assets/html'
 
 class BatmanTodo extends Batman.App
 
-  @resources 'todo_lists'
+  @resources 'todo_lists', ->
+    @resources 'todos'
 
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
