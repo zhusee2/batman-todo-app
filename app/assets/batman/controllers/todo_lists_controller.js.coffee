@@ -2,7 +2,7 @@ class BatmanTodo.TodoListsController extends BatmanTodo.ApplicationController
   routingKey: 'todo_lists'
 
   index: (params) ->
-    @set 'todolists', BatmanTodo.TodoList.get('all')
+    @set 'todolists', BatmanTodo.TodoList.get('all').sortedBy('id', 'desc')
 
   show: (params) ->
 
