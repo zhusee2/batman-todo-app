@@ -34,6 +34,6 @@ class BatmanTodo extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'main#index'
+  @root 'todoLists#index' # 'todo_lists' will cause controller not found
 
 (global ? window).BatmanTodo = BatmanTodo
