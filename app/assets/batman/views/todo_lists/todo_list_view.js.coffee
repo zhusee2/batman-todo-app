@@ -6,6 +6,11 @@ class BatmanTodo.TodoListView extends Batman.View
   viewDidAppear: ->
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
 
+  popover: (node, event, view) ->
+    todolist = @get('todolist')
+
+    view.subviews.add new BatmanTodo.TodosEditPopoverView(node, todolist)
+
   showTodoForm: (node, event, view) ->
     event.stopImmediatePropagation()
     event.preventDefault()

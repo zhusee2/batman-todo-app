@@ -6,6 +6,9 @@
 #= require jquery
 #= require batman/batman.jquery
 
+#= require twitter/bootstrap/tooltip
+#= require twitter/bootstrap/popover
+
 #= require_self
 
 #= require_tree ./lib
