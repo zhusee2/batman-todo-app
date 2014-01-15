@@ -16,7 +16,7 @@ class BatmanTodo.TodoListsController extends BatmanTodo.ApplicationController
       if error
         throw error unless error instanceof Batman.ErrorsSet
       else
-        @redirect "/todo_lists"
+        @redirect "/"
 
   update: (params) ->
 
