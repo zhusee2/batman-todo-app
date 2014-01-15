@@ -6,7 +6,7 @@
 </p>
 
 <ul class="unstyled todo-lists">
-  <li class="todo-list" data-foreach-todolist="todolists">
+  <li class="todo-list" data-foreach-todolist="todolists" data-view="TodoListView">
     <h3 data-bind="todolist.title"></h3>
 
     <ul class="unstyled todos">
@@ -15,8 +15,13 @@
         <span data-bind="todo.title"></span>
       </li>
       <li class="new-todo">
-        <a data-route="routes.todoLists[todolist].todos.new">Add a Todo</a>
+        <a data-route="routes.todoLists[todolist].todos.new" data-event-click="showTodoForm">Add a Todo</a>
       </li>
     </ul>
+
+    <form class="new-tdodo-form" data-formfor-newtodo="newTodo" data-event-submit="addTodo">
+      <input type="text" name="title" class="new-todo-field" data-bind="newtodo.title">
+      <a data-event-click="hideTodoForm">Done</a>
+    </form>
   </li>
 </ul>
