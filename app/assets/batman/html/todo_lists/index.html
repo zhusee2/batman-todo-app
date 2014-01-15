@@ -7,21 +7,6 @@
 
 <ul class="unstyled todo-lists">
   <li class="todo-list" data-foreach-todolist="todolists" data-view="TodoListView">
-    <h3 data-bind="todolist.title"></h3>
-
-    <ul class="unstyled todos">
-      <li class="todo" data-foreach-todo="todolist.todos">
-        <input type="checkbox" data-bind="todo.completed" data-event-change="toggleTodo">
-        <span data-bind="todo.title"></span>
-      </li>
-      <li class="new-todo">
-        <a data-route="routes.todoLists[todolist].todos.new" data-event-click="showTodoForm">Add a Todo</a>
-      </li>
-    </ul>
-
-    <form class="new-tdodo-form hide" data-formfor-newtodo="newTodo" data-event-submit="addTodo" data-removeclass-hide="addingTodo">
-      <input type="text" name="title" class="new-todo-field" data-bind="newtodo.title" autofocus>
-      <a data-event-click="hideTodoForm">Done</a>
-    </form>
+    <div data-partial="todo_lists/_list"></div>
   </li>
 </ul>
