@@ -4,7 +4,6 @@ class BatmanTodo.BootstrapPopoverView extends Batman.View
 
     popoverDefaultOption = {
       title: 'Popover'
-      content: @node
       html: true
       trigger: 'manual'
       placement: 'right'
@@ -30,7 +29,7 @@ class BatmanTodo.BootstrapPopoverView extends Batman.View
 
   viewDidAppear: ->
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
-    $(@hook).popover(@popoverOptions)
+    $(@hook).popover $.extend(@popoverOptions, {content: @node})
     @show()
     @bindEvents()
 
