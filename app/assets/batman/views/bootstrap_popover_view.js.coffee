@@ -1,5 +1,7 @@
 class BatmanTodo.BootstrapPopoverView extends Batman.View
   constructor: (popoverHook, options = {}) ->
+    super
+
     popoverDefaultOption = {
       title: 'Popover'
       content: @node
@@ -15,8 +17,6 @@ class BatmanTodo.BootstrapPopoverView extends Batman.View
     @set('instanceIdentifier', "bs-popover-#{Date.now()}")
 
     @set('hook', popoverHook)
-
-    super
 
   bindEvents: ->
     $(@popoverContainer).on "click", (event) ->
