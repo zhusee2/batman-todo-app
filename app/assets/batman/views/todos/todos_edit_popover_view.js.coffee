@@ -8,9 +8,15 @@ class BatmanTodo.TodosEditPopoverView extends Batman.View
 
     super(options)
 
-  ready: ->
+  bindEvents: ->
+    $(@popoverContainer).on "click", (event) ->
+      event.stopPropagation()
+
     $(document).on "#{@groupIdentifier}-show.#{@instanceIdentifier}", (event, instance) =>
       @notifiedPopoverShow(event, instance)
+
+    $(document).on "click.#{@instanceIdentifier}", (event) =>
+      @notifiedDocumentClick(event)
 
   viewDidAppear: ->
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
@@ -23,12 +29,13 @@ class BatmanTodo.TodosEditPopoverView extends Batman.View
       container: 'body'
     })
     @show()
+    @bindEvents()
 
   show: ->
     $(@hook).popover('show')
-    console.log "#{@groupIdentifier}-show.#{@instanceIdentifier}"
     $(document).trigger("#{@groupIdentifier}-show", this)
     @fire('show')
+    @set('popoverContainer', $(@node).closest('.popover'))
 
   hide: ->
     $(@hook).popover('hide')
@@ -48,6 +55,9 @@ class BatmanTodo.TodosEditPopoverView extends Batman.View
 
   notifiedPopoverShow: (jqEvent, instance) ->
     @hideAndDestroy() if instance isnt this
+
+  notifiedDocumentClick: (jqEvent) ->
+    @hideAndDestroy()
 
   # buttonWasClicked: (node, event, view) ->
     # You can put all of your event handlers in this view file. You can access
