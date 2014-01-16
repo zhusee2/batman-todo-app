@@ -31,13 +31,16 @@ class BatmanTodo.BootstrapPopoverView extends Batman.View
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
     $(@hook).popover $.extend(@popoverOptions, {content: @node})
     @show()
-    @bindEvents()
 
   show: ->
     $(@hook).popover('show')
     $(document).trigger("#{@groupIdentifier}-show", this)
     @fire('show')
     @set('popoverContainer', $(@node).closest('.popover'))
+
+    setTimeout =>
+      @bindEvents()
+    500
 
   hide: ->
     $(@hook).popover('hide')
@@ -51,9 +54,10 @@ class BatmanTodo.BootstrapPopoverView extends Batman.View
 
   hideAndDestroy: ->
     @hide()
+
     setTimeout =>
       @destroy()
-    , 1000
+    , 500
 
   notifiedPopoverShow: (jqEvent, instance) ->
     @hideAndDestroy() if instance isnt this
