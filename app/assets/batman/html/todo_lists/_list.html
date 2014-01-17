@@ -5,6 +5,8 @@
       <li class="todo" data-foreach-todo="todolist.todos">
         <input type="checkbox" data-bind="todo.completed" data-event-change="toggleTodo">
         <span data-bind="todo.title"></span>
+        <span class="label" data-bind="todo.priority"></span>
+        <span class="label" data-bind="todo.due_date"></span>
       </li>
       <li class="new-todo">
         <a data-route="routes.todoLists[todolist].todos.new" data-event-click="showTodoForm">Add a Todo</a>

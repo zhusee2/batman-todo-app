@@ -9,6 +9,6 @@ class BatmanTodo.Todo extends Batman.Model
   @urlNestsUnder 'todo_list'
 
   # Use @encode to tell batman.js which properties Rails will send back with its JSON.
-  @encode 'title', 'completed'
+  @encode 'title', 'completed', 'priority', 'due_date'
   @encodeTimestamps()
 
