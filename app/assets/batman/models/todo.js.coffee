@@ -12,3 +12,5 @@ class BatmanTodo.Todo extends Batman.Model
   @encode 'title', 'completed', 'priority', 'due_date'
   @encodeTimestamps()
 
+  @priorities: ['critical', 'high', 'normal', 'low', 'whatever']
+

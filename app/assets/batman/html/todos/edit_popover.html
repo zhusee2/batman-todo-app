@@ -3,7 +3,14 @@
     Title: <input type="text" data-bind="todo.title">
   </label>
 
-  <label class="checkbox">
-    <input type="checkbox" data-bind="todo.completed"/> Completed
+  <label class="select">Priority:
+    <select name="priority" data-bind="todo.priority">
+      <option data-foreach-key="priorityList" data-bind-value="key" data-bind="key | humanize"></option>
+    </select>
   </label>
+
+  <label class="date">Due Date:
+    <input type="date" name="due_date" data-bind="todo.due_date"/>
+  </label>
+
 </form>
