@@ -7,6 +7,9 @@
         <span data-bind="todo.title"></span>
         <span class="label" data-bind="todo.priority"></span>
         <span class="label" data-bind="todo.due_date"></span>
+        <button class="btn btn-mini" data-event-click="editTodo">
+          <span class="fa fa-pencil"></span>
+        </button>
       </li>
       <li class="new-todo">
         <a data-route="routes.todoLists[todolist].todos.new" data-event-click="showTodoForm">Add a Todo</a>
