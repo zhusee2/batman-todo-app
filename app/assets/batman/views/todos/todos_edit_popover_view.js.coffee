@@ -14,3 +14,6 @@ class BatmanTodo.TodosEditPopoverView extends BatmanTodo.BootstrapPopoverView
     @set('instanceIdentifier', "todos-edit-popover-#{Date.now()}")
 
     @set('priorityList', BatmanTodo.Todo.priorities)
+
+  updateTodo: (node, event, view) ->
+    @todo.save()
