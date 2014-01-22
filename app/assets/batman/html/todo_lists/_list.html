@@ -2,7 +2,7 @@
     <h3 data-bind="todolist.title"></h3>
 
     <ul class="unstyled todos">
-      <li class="todo" data-foreach-todo="todolist.todos">
+      <li class="todo" data-foreach-todo="sortedTodos">
         <input type="checkbox" data-bind="todo.completed" data-event-change="toggleTodo">
         <span data-bind="todo.title"></span>
         <span class="label" data-bind="todo.priority"></span>

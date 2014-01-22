@@ -3,6 +3,8 @@ class BatmanTodo.TodoListView extends Batman.View
     @set 'addingTodo', false
     @resetNewTodo()
 
+    @set('sortedTodos', @get('todolist.todos').sortedBy('completed', 'desc'))
+
   viewDidAppear: ->
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
 
