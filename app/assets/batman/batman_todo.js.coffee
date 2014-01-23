@@ -15,6 +15,7 @@
 #= require_tree ./controllers
 #= require_tree ./models
 #= require_tree ./views
+#= require_tree ./filters
 
 Batman.config.pathToHTML = '/assets/html'
 

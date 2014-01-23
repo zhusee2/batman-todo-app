@@ -5,7 +5,7 @@
       <li class="todo" data-foreach-todo="sortedTodos">
         <input type="checkbox" data-bind="todo.completed" data-event-change="toggleTodo">
         <span data-bind="todo.title"></span>
-        <span class="label" data-bind="todo.priority"></span>
+        <span data-bind="todo.priority" data-bind-class="todo.priority | priorityLabel"></span>
         <span class="label" data-bind="todo.due_date"></span>
         <button class="btn btn-mini" data-event-click="editTodo">
           <span class="fa fa-pencil"></span>
